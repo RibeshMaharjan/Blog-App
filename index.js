@@ -9,7 +9,8 @@ const Blog = require("./models/blog");
 const userRouter = require("./routes/user");
 const blogRouter = require("./routes/blog");
 const { checkForAuthenticationCookie } = require("./middleware/authentication");
-const PORT = 8000;
+
+const PORT = 8080;
 
 mongoose
   .connect("mongodb://localhost:27017/blogapp")
@@ -23,6 +24,9 @@ app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"));
 app.use(express.static(path.resolve("./public")));
 
+app.use("/user", userRouter);
+app.use("/blog", blogRouter);
+
 app.get("/", async (req, res) => {
   const allBlogs = await Blog.find({});
   res.render("home", {
@@ -30,9 +34,6 @@ app.get("/", async (req, res) => {
     blogs: allBlogs,
   });
 });
-
-app.use("/user", userRouter);
-app.use("/blog", blogRouter);
 
 app.listen(PORT, () => {
   console.log("Server is listening on PORT: ", PORT);
