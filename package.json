@@ -2,11 +2,10 @@
   "name": "blog-app",
   "version": "1.0.0",
   "description": "A blog application built to intergrate various web dev concept previouly learnt in seperate projects.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --env-file=./.env index.js",
-    "dev": "node --watch --env-file=./.env index.js"
+    "start": "node app.js",
+    "dev": "node --watch --env-file=./.env app.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +20,7 @@
   "homepage": "https://github.com/RibeshMaharjan/Blog-App#readme",
   "dependencies": {
     "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
