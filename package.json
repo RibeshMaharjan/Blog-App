@@ -1,0 +1,27 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "A blog application built to intergrate various web dev concept previouly learnt in seperate projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=./.env index.js",
+    "dev": "node --watch --env-file=./.env index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RibeshMaharjan/Blog-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RibeshMaharjan/Blog-App/issues"
+  },
+  "homepage": "https://github.com/RibeshMaharjan/Blog-App#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5"
+  }
+}
